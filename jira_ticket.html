@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIRA Issue - JIRA-201</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 20px;
+            background-color: #f4f5f7;
+            color: #172b4d;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 3px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .issue-header {
+            border-bottom: 1px solid #dfe1e6;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .issue-id {
+            color: #5e6c84;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .issue-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            background-color: #deebff;
+            color: #0747a6;
+        }
+
+        .details-sidebar {
+            width: 250px;
+            float: right;
+            margin-left: 20px;
+        }
+
+        .detail-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #dfe1e6;
+        }
+
+        .detail-label {
+            color: #5e6c84;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .detail-value {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .comment-section {
+            margin-top: 20px;
+        }
+
+        .comment {
+            background: #f4f5f7;
+            border-radius: 3px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .bug-section {
+            border: 1px solid #ffebe6;
+            background: #fffaeb;
+            padding: 15px;
+            border-radius: 3px;
+            margin: 20px 0;
+        }
+
+        .priority-medium {
+            background-color: #fff0b3;
+            color: #bf5b04;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+        .label {
+            display: inline-block;
+            background: #dfe1e6;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="issue-header">
+            <div class="issue-id">JIRA-201</div>
+            <h1 class="issue-title">Profile Page - Add Profile Picture Upload Feature</h1>
+            <span class="status-badge">In Progress</span>
+        </div>
+
+        <div class="details-sidebar">
+            <div class="detail-item">
+                <div class="detail-label">STATUS</div>
+                <div class="detail-value status-badge">In Progress</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">PRIORITY</div>
+                <div class="detail-value priority-medium">Medium</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">ASSIGNEE</div>
+                <div class="detail-value">John Doe</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">REPORTER</div>
+                <div class="detail-value">Jane Smith</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">DUE DATE</div>
+                <div class="detail-value">2025-04-05</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">LABELS</div>
+                <div class="detail-value">
+                    <span class="label">Profile</span>
+                    <span class="label">Enhancement</span>
+                    <span class="label">UI</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="detail-item">
+                <h3>Description</h3>
+                <p>Allow users to upload, change, and remove their profile pictures. The supported formats should be JPG, PNG, and GIF with a maximum size of 5MB. The uploaded image should be displayed as a preview before saving.</p>
+            </div>
+
+            <div class="bug-section">
+                <h3>Bug Details</h3>
+                <p><strong>BUG-321:</strong> Uploaded images are not appearing immediately in the preview section.</p>
+                <div class="detail-label">Reported by David White on 2025-03-30</div>
+            </div>
+
+            <div class="comment-section">
+                <h3>Comments</h3>
+                <div class="comment">
+                    <div class="detail-label">Alex Brown - 2025-03-29</div>
+                    <p>Make sure to add frontend validation for file formats and size.</p>
+                </div>
+                <div class="comment">
+                    <div class="detail-label">Sarah Lee - 2025-03-30</div>
+                    <p>Backend should validate the MIME type to prevent security issues.</p>
+                </div>
+            </div>
+
+            <div class="expected-output">
+                <h3>Expected Output</h3>
+                <ul>
+                    <li>User can upload JPG, PNG, and GIF images up to 5MB.</li>
+                    <li>Uploaded image should be visible as a preview before saving.</li>
+                    <li>Users can remove or change their profile picture.</li>
+                    <li>Proper error messages should be displayed for unsupported formats or oversized files.</li>
+                </ul>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+**Structured Report: Suggested Test Cases for Profile Picture Upload Feature**
+
+**Introduction:**
+The following report summarizes the Jira analysis of the Profile Page - Add Profile Picture Upload Feature ticket. The report provides a structured overview of the recommended test cases to ensure the successful implementation of this feature.
+
+**Jira Ticket Analysis:**
+
+| **Category** | **Ticket Details** |
+| --- | --- |
+| Title | Profile Page - Add Profile Picture Upload Feature |
+| Description | Allow users to upload, change, and remove their profile pictures. |
+| Priority | Medium |
+| Labels | Profile, Enhancement, UI |
+| Status | In Progress |
+
+**Assignee:** John Doe
+**Reporter:** Jane Smith
+**Created Date:** 2025-03-28
+**Updated Date:** 2025-03-30
+**Due Date:** 2025-04-05
+
+**Comments:**
+1. Comment ID: CMT-001, Author: Alex Brown, Date: 2025-03-29, Content: Make sure to add frontend validation for file formats and size.
+2. Comment ID: CMT-002, Author: Sarah Lee, Date: 2025-03-30, Content: Backend should validate the MIME type to prevent security issues.
+
+**Bug Details:** 
+| **Category** | **Bug Details** |
+| --- | --- |
+| Bug ID | BUG-321 |
+| Bug Description | Uploaded images are not appearing immediately in the preview section. |
+| Bug Status | Open |
+| Bug Reported By | David White |
+| Bug Reported Date | 2025-03-30 |
+
+**Resolution:** 
+| **Category** | **Resolution Details** |
+| --- | --- |
+| Status | Unresolved |
+| Resolved By | None |
+| Resolved Date | None |
+| Resolution Notes | None |
+
+**Expected Output:**
+The expected output for this feature includes:
+
+* User can upload JPG, PNG, and GIF images up to 5MB.
+* Uploaded image should be visible as a preview before saving.
+* Users can remove or change their profile picture.
+* Proper error messages should be displayed for unsupported formats or oversized files.
+
+**Recommended Test Cases:**
+
+1. **Verify that users can upload a JPG, PNG, or GIF file successfully.**
+	* Preconditions: User is logged in and has a valid email address.
+	* Steps:
+		1. Upload a new profile picture using the supported formats (JPG, PNG, GIF).
+		2. Verify that the uploaded image appears immediately in the preview section.
+		3. Repeat steps 1-2 for different file types to ensure compatibility.
+	* Expected Result: Successful upload and display of the image.
+2. **Check that the preview is displayed before saving.**
+	* Preconditions: User has uploaded a new profile picture using the supported formats (JPG, PNG, GIF).
+	* Steps:
+		1. Verify that the uploaded image appears in the preview section.
+		2. Confirm that the user can save changes without leaving the page.
+		3. Repeat steps 1-2 for different file types to ensure compatibility.
+	* Expected Result: Preview is displayed before saving.
+3. **Ensure that file size validation prevents uploads over 5MB.**
+	* Preconditions: User has uploaded a new profile picture using an oversized file (6MB).
+	* Steps:
+		1. Verify that the upload fails with an error message indicating the maximum allowed file size (5MB).
+		2. Confirm that the user is prompted to enter a smaller file or cancel the upload.
+		3. Repeat steps 1-2 for different oversized files to ensure compatibility.
+	* Expected Result: File size validation prevents uploads over 5MB.
+4. **Confirm that an error message appears for unsupported file formats.**
+	* Preconditions: User attempts to upload a profile picture using an unsupported file format (e.g., PDF, BMP).
+	* Steps:
+		1. Verify that the upload fails with an error message indicating the unsupported file type.
+		2. Confirm that the user is prompted to enter a valid file format.
+		3. Repeat steps 1-2 for different unsupported file formats to ensure compatibility.
+	* Expected Result: Error message appears for unsupported file formats.
+
+**Conclusion:**
+These recommended test cases ensure that the Profile Picture Upload Feature is thoroughly tested and meets the expected requirements. By verifying the upload process, preview display, file size validation, and error handling, we can guarantee a smooth user experience and prevent potential bugs.

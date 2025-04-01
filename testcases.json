@@ -1,0 +1,123 @@
+[
+    {
+      "category": "Profile Page",
+      "test_case": "Verify that users can upload a JPG, PNG, or GIF file successfully."
+    },
+    {
+      "category": "Profile Page",
+      "test_case": "Check that the preview is displayed before saving."
+    },
+    {
+      "category": "Profile Page",
+      "test_case": "Ensure that file size validation prevents uploads over 5MB."
+    },
+    {
+      "category": "Profile Page",
+      "test_case": "Confirm that an error message appears for unsupported file formats."
+    },
+    {
+      "category": "Profile Page",
+      "test_case": "Validate that users can remove an uploaded profile picture."
+    },
+    {
+      "category": "Login Page",
+      "test_case": "Ensure that users can log in with valid credentials."
+    },
+    {
+      "category": "Login Page",
+      "test_case": "Verify that incorrect passwords show an error message."
+    },
+    {
+      "category": "Login Page",
+      "test_case": "Check that 'Remember Me' functionality persists login sessions."
+    },
+    {
+      "category": "Login Page",
+      "test_case": "Ensure that locked accounts cannot log in."
+    },
+    {
+      "category": "Registration Page",
+      "test_case": "Verify that users can register with valid details."
+    },
+    {
+      "category": "Registration Page",
+      "test_case": "Ensure that password strength validation is enforced."
+    },
+    {
+      "category": "Registration Page",
+      "test_case": "Check that duplicate email registration is prevented."
+    },
+    {
+      "category": "Dashboard",
+      "test_case": "Verify that the dashboard loads correctly after login."
+    },
+    {
+      "category": "Dashboard",
+      "test_case": "Ensure that widgets on the dashboard are displayed properly."
+    },
+    {
+      "category": "Dashboard",
+      "test_case": "Check that the user statistics update in real-time."
+    },
+    {
+      "category": "Settings Page",
+      "test_case": "Validate that users can update their account settings."
+    },
+    {
+      "category": "Settings Page",
+      "test_case": "Ensure that users can change their password."
+    },
+    {
+      "category": "Settings Page",
+      "test_case": "Check that email notifications can be toggled on/off."
+    },
+    {
+      "category": "Search Functionality",
+      "test_case": "Ensure that users can search using keywords."
+    },
+    {
+      "category": "Search Functionality",
+      "test_case": "Verify that search results are relevant."
+    },
+    {
+      "category": "Search Functionality",
+      "test_case": "Check that no results message appears when no matches are found."
+    },
+    {
+      "category": "File Upload",
+      "test_case": "Ensure that large file uploads are restricted."
+    },
+    {
+      "category": "File Upload",
+      "test_case": "Verify that uploaded files are scanned for viruses."
+    },
+    {
+      "category": "File Upload",
+      "test_case": "Check that users can delete uploaded files."
+    },
+    {
+      "category": "Notifications",
+      "test_case": "Verify that users receive notifications for new messages."
+    },
+    {
+      "category": "Notifications",
+      "test_case": "Ensure that notifications are displayed in real-time."
+    },
+    {
+      "category": "Notifications",
+      "test_case": "Check that users can mark notifications as read."
+    },
+    {
+      "category": "Checkout Page",
+      "test_case": "Ensure that users can complete purchases successfully."
+    },
+    {
+      "category": "Checkout Page",
+      "test_case": "Verify that incorrect card details result in an error."
+    },
+    {
+      "category": "Checkout Page",
+      "test_case": "Check that order summaries display accurate information."
+    }
+  ]
+  

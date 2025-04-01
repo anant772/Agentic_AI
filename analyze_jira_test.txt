@@ -1,0 +1,37 @@
+The Jira ticket details are as follows:
+
+**Ticket Title:** Profile Page - Add Profile Picture Upload Feature
+**Description:** Allow users to upload, change, and remove their profile pictures. The supported formats should be JPG, PNG, and GIF with a maximum size of 5MB. The uploaded image should be displayed as a preview before saving.
+**Priority:** Medium
+**Labels:** Profile, Enhancement, UI
+**Status:** In Progress
+
+Assignee: John Doe
+Reporter: Jane Smith
+Created Date: 2025-03-28
+Updated Date: 2025-03-30
+Due Date: 2025-04-05
+
+**Comments:**
+1. Comment ID: CMT-001, Author: Alex Brown, Date: 2025-03-29, Content: Make sure to add frontend validation for file formats and size.
+2. Comment ID: CMT-002, Author: Sarah Lee, Date: 2025-03-30, Content: Backend should validate the MIME type to prevent security issues.
+
+**Bug Details:** 
+is_bug: True
+bug_id: BUG-321
+bug_description: Uploaded images are not appearing immediately in the preview section.
+bug_status: Open
+bug_reported_by: David White
+bug_reported_date: 2025-03-30
+
+**Resolution:** 
+status: Unresolved
+resolved_by: None
+resolved_date: None
+resolution_notes: None
+
+**Expected Output:**
+User can upload JPG, PNG, and GIF images up to 5MB.
+Uploaded image should be visible as a preview before saving.
+Users can remove or change their profile picture.
+Proper error messages should be displayed for unsupported formats or oversized files.
