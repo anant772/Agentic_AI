@@ -1,0 +1,17 @@
+
+[
+  {"test_case": "TC-001", "description": "Verify successful profile picture upload", "priority": "High", "category": "Functional"},
+  {"test_case": "TC-002", "description": "Validate unsupported file formats", "priority": "High", "category": "Functional"},
+  {"test_case": "TC-003", "description": "Check file size limit", "priority": "High", "category": "Functional"},
+  {"test_case": "TC-004", "description": "Ensure preview is displayed after upload", "priority": "High", "category": "UI"},
+  {"test_case": "TC-005", "description": "Validate MIME type on backend", "priority": "High", "category": "Security"},
+  {"test_case": "TC-009", "description": "Ensure cropping and resizing feature works", "priority": "High", "category": "Functional"},
+  {"test_case": "TC-011", "description": "Test concurrent uploads", "priority": "Medium", "category": "Edge Case"},
+  {"test_case": "TC-012", "description": "Verify image compression before upload", "priority": "Medium", "category": "Performance"},
+  {"test_case": "TC-016", "description": "Verify error logging", "priority": "Medium", "category": "Logging"},
+  {"test_case": "TC-018", "description": "Check behavior when canceling an upload", "priority": "Medium", "category": "Functional"},
+  {"test_case": "TC-020", "description": "Ensure image file integrity after upload", "priority": "High", "category": "Functional"},
+  {"test_case": "TC-021", "description": "Validate profile picture visibility for other users", "priority": "High", "category": "Functional"},
+  {"test_case": "TC-023", "description": "Check upload limit for rapid multiple submissions", "priority": "Medium", "category": "Security"},
+  {"test_case": "TC-025", "description": "Validate mobile responsiveness", "priority": "High", "category": "UI"}
+]

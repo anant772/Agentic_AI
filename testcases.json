@@ -1,123 +1,252 @@
-[
+{
+  "test_cases": [
     {
-      "category": "Profile Page",
-      "test_case": "Verify that users can upload a JPG, PNG, or GIF file successfully."
+      "id": "TC-001",
+      "title": "Verify successful profile picture upload",
+      "description": "Ensure users can upload a valid JPG, PNG, or GIF file within 5MB.",
+      "expected_result": "Image is uploaded successfully and displayed in the preview.",
+      "priority": "High",
+      "category": "Functional"
     },
     {
-      "category": "Profile Page",
-      "test_case": "Check that the preview is displayed before saving."
+      "id": "TC-002",
+      "title": "Validate unsupported file formats",
+      "description": "Try uploading an unsupported file format (e.g., PDF, BMP, SVG).",
+      "expected_result": "Error message should be displayed: 'Unsupported file format'.",
+      "priority": "Medium",
+      "category": "Negative"
     },
     {
-      "category": "Profile Page",
-      "test_case": "Ensure that file size validation prevents uploads over 5MB."
+      "id": "TC-003",
+      "title": "Check file size limit",
+      "description": "Upload an image greater than 5MB.",
+      "expected_result": "Error message should be displayed: 'File size exceeds the 5MB limit'.",
+      "priority": "High",
+      "category": "Functional"
     },
     {
-      "category": "Profile Page",
-      "test_case": "Confirm that an error message appears for unsupported file formats."
+      "id": "TC-004",
+      "title": "Ensure preview is displayed after upload",
+      "description": "Upload an image and check if it appears in the preview section before saving.",
+      "expected_result": "The uploaded image is shown in the preview.",
+      "priority": "High",
+      "category": "UI"
     },
     {
-      "category": "Profile Page",
-      "test_case": "Validate that users can remove an uploaded profile picture."
+      "id": "TC-005",
+      "title": "Validate MIME type on backend",
+      "description": "Bypass frontend validation and upload a file with a modified extension but incorrect MIME type.",
+      "expected_result": "Backend should reject the file and return an error.",
+      "priority": "High",
+      "category": "Security"
     },
     {
-      "category": "Login Page",
-      "test_case": "Ensure that users can log in with valid credentials."
+      "id": "TC-006",
+      "title": "Test removing profile picture",
+      "description": "Remove an already uploaded profile picture.",
+      "expected_result": "Profile picture is removed, and a default placeholder image is shown.",
+      "priority": "Medium",
+      "category": "Functional"
     },
     {
-      "category": "Login Page",
-      "test_case": "Verify that incorrect passwords show an error message."
+      "id": "TC-007",
+      "title": "Verify changing profile picture",
+      "description": "Upload a new image to replace the existing one.",
+      "expected_result": "The new image replaces the old one in the preview.",
+      "priority": "High",
+      "category": "Functional"
     },
     {
-      "category": "Login Page",
-      "test_case": "Check that 'Remember Me' functionality persists login sessions."
+      "id": "TC-008",
+      "title": "Check lazy loading of profile images",
+      "description": "Observe loading behavior when scrolling through profile pictures.",
+      "expected_result": "Images should load progressively without lag.",
+      "priority": "Medium",
+      "category": "Performance"
     },
     {
-      "category": "Login Page",
-      "test_case": "Ensure that locked accounts cannot log in."
+      "id": "TC-009",
+      "title": "Ensure cropping and resizing feature works",
+      "description": "Use cropping and resizing options before uploading.",
+      "expected_result": "Image is cropped and resized correctly before upload.",
+      "priority": "High",
+      "category": "Functional"
     },
     {
-      "category": "Registration Page",
-      "test_case": "Verify that users can register with valid details."
+      "id": "TC-010",
+      "title": "Simulate slow network conditions",
+      "description": "Upload an image with a slow internet connection.",
+      "expected_result": "The UI should show a loading indicator, and the upload should complete successfully.",
+      "priority": "Medium",
+      "category": "Performance"
     },
     {
-      "category": "Registration Page",
-      "test_case": "Ensure that password strength validation is enforced."
+      "id": "TC-011",
+      "title": "Test concurrent uploads",
+      "description": "Try uploading multiple images in quick succession.",
+      "expected_result": "Only the last uploaded image should be stored as the profile picture.",
+      "priority": "Medium",
+      "category": "Edge Case"
     },
     {
-      "category": "Registration Page",
-      "test_case": "Check that duplicate email registration is prevented."
+      "id": "TC-012",
+      "title": "Verify image compression before upload",
+      "description": "Check if large images are compressed before uploading.",
+      "expected_result": "File size is reduced without significant loss of quality.",
+      "priority": "Medium",
+      "category": "Performance"
     },
     {
-      "category": "Dashboard",
-      "test_case": "Verify that the dashboard loads correctly after login."
+      "id": "TC-013",
+      "title": "Cross-browser compatibility",
+      "description": "Test image upload functionality on different browsers (Chrome, Firefox, Safari, Edge).",
+      "expected_result": "Functionality should work the same across all browsers.",
+      "priority": "Medium",
+      "category": "Compatibility"
     },
     {
-      "category": "Dashboard",
-      "test_case": "Ensure that widgets on the dashboard are displayed properly."
+      "id": "TC-014",
+      "title": "Accessibility check",
+      "description": "Ensure screen readers can interpret file upload fields and error messages.",
+      "expected_result": "The feature is accessible to users with disabilities.",
+      "priority": "Low",
+      "category": "Accessibility"
     },
     {
-      "category": "Dashboard",
-      "test_case": "Check that the user statistics update in real-time."
+      "id": "TC-015",
+      "title": "Test session timeout behavior",
+      "description": "Upload an image and leave the session inactive for an extended period before saving.",
+      "expected_result": "Session timeout should not lose uploaded data if restored within a valid timeframe.",
+      "priority": "Low",
+      "category": "Edge Case"
     },
     {
-      "category": "Settings Page",
-      "test_case": "Validate that users can update their account settings."
+      "id": "TC-016",
+      "title": "Verify error logging",
+      "description": "Trigger errors (e.g., invalid format, large size) and check if logs capture details correctly.",
+      "expected_result": "Errors are logged properly with appropriate messages.",
+      "priority": "Medium",
+      "category": "Logging"
     },
     {
-      "category": "Settings Page",
-      "test_case": "Ensure that users can change their password."
+      "id": "TC-017",
+      "title": "Verify error handling for missing image files",
+      "description": "Try uploading an image file, then delete it from the source folder before confirming upload.",
+      "expected_result": "System should detect the missing file and show an appropriate error message.",
+      "priority": "Medium",
+      "category": "Error Handling"
     },
     {
-      "category": "Settings Page",
-      "test_case": "Check that email notifications can be toggled on/off."
+      "id": "TC-018",
+      "title": "Check behavior when canceling an upload",
+      "description": "Start an image upload and cancel it before completion.",
+      "expected_result": "Upload should be stopped, and no image should be saved.",
+      "priority": "Medium",
+      "category": "Functional"
     },
     {
-      "category": "Search Functionality",
-      "test_case": "Ensure that users can search using keywords."
+      "id": "TC-019",
+      "title": "Test upload with different internet speeds",
+      "description": "Simulate different internet speeds (e.g., 3G, 4G, slow Wi-Fi) while uploading an image.",
+      "expected_result": "Upload should complete with a progress indicator, or timeout errors should be handled properly.",
+      "priority": "Medium",
+      "category": "Performance"
     },
     {
-      "category": "Search Functionality",
-      "test_case": "Verify that search results are relevant."
+      "id": "TC-020",
+      "title": "Ensure image file integrity after upload",
+      "description": "Upload an image and compare the stored file with the original for corruption or data loss.",
+      "expected_result": "Stored image should match the original file without quality degradation.",
+      "priority": "High",
+      "category": "Functional"
     },
     {
-      "category": "Search Functionality",
-      "test_case": "Check that no results message appears when no matches are found."
+      "id": "TC-021",
+      "title": "Validate profile picture visibility for other users",
+      "description": "Check if the uploaded profile picture is correctly displayed to other users.",
+      "expected_result": "Other users should see the correct updated profile picture.",
+      "priority": "High",
+      "category": "Functional"
     },
     {
-      "category": "File Upload",
-      "test_case": "Ensure that large file uploads are restricted."
+      "id": "TC-022",
+      "title": "Test image upload retry mechanism",
+      "description": "Simulate a failed upload (e.g., network disconnection) and check if retrying works properly.",
+      "expected_result": "Users should be able to retry the upload without starting over.",
+      "priority": "Medium",
+      "category": "Error Handling"
     },
     {
-      "category": "File Upload",
-      "test_case": "Verify that uploaded files are scanned for viruses."
+      "id": "TC-023",
+      "title": "Check upload limit for rapid multiple submissions",
+      "description": "Try uploading multiple images rapidly to check system behavior.",
+      "expected_result": "Only the last uploaded image should be stored, and excessive requests should be rate-limited.",
+      "priority": "Medium",
+      "category": "Security"
     },
     {
-      "category": "File Upload",
-      "test_case": "Check that users can delete uploaded files."
+      "id": "TC-024",
+      "title": "Ensure file permissions are secure",
+      "description": "Check if unauthorized users can access, modify, or delete uploaded profile pictures.",
+      "expected_result": "Only authorized users should be able to modify their own profile pictures.",
+      "priority": "High",
+      "category": "Security"
     },
     {
-      "category": "Notifications",
-      "test_case": "Verify that users receive notifications for new messages."
+      "id": "TC-025",
+      "title": "Validate mobile responsiveness",
+      "description": "Test the profile picture upload feature on mobile devices (iOS, Android).",
+      "expected_result": "Feature should work smoothly with a responsive UI.",
+      "priority": "High",
+      "category": "UI"
     },
     {
-      "category": "Notifications",
-      "test_case": "Ensure that notifications are displayed in real-time."
+      "id": "TC-026",
+      "title": "Verify incorrect MIME type injection",
+      "description": "Try renaming a non-image file (e.g., .exe or .txt) to .jpg and attempt to upload it.",
+      "expected_result": "System should correctly detect and reject the file.",
+      "priority": "High",
+      "category": "Security"
     },
     {
-      "category": "Notifications",
-      "test_case": "Check that users can mark notifications as read."
+      "id": "TC-027",
+      "title": "Check system behavior under high load",
+      "description": "Simulate multiple users uploading images at the same time.",
+      "expected_result": "System should handle concurrent uploads without crashing or significant slowdown.",
+      "priority": "High",
+      "category": "Performance"
     },
     {
-      "category": "Checkout Page",
-      "test_case": "Ensure that users can complete purchases successfully."
+      "id": "TC-028",
+      "title": "Test dark mode compatibility",
+      "description": "Ensure the profile picture upload feature looks and functions correctly in dark mode.",
+      "expected_result": "Dark mode UI should be consistent and readable.",
+      "priority": "Low",
+      "category": "UI"
     },
     {
-      "category": "Checkout Page",
-      "test_case": "Verify that incorrect card details result in an error."
+      "id": "TC-029",
+      "title": "Check clipboard paste upload",
+      "description": "Try pasting an image from the clipboard into the upload area.",
+      "expected_result": "System should recognize and allow pasting images.",
+      "priority": "Medium",
+      "category": "Functional"
     },
     {
-      "category": "Checkout Page",
-      "test_case": "Check that order summaries display accurate information."
+      "id": "TC-030",
+      "title": "Validate auto-scaling of large images",
+      "description": "Upload a large image and verify if it's resized automatically without affecting quality.",
+      "expected_result": "Image should be resized to fit within UI constraints.",
+      "priority": "Medium",
+      "category": "Performance"
+    },
+    {
+      "id": "TC-031",
+      "title": "Ensure audit logging for image uploads",
+      "description": "Check if image uploads are logged with metadata (timestamp, user ID, file name).",
+      "expected_result": "All uploads should have proper audit logs for tracking.",
+      "priority": "Medium",
+      "category": "Security"
     }
   ]
-  
+}

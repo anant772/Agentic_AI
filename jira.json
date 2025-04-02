@@ -1,48 +1,82 @@
 {
-    "id": "JIRA-201",
-    "title": "Profile Page - Add Profile Picture Upload Feature",
-    "description": "Allow users to upload, change, and remove their profile pictures. The supported formats should be JPG, PNG, and GIF with a maximum size of 5MB. The uploaded image should be displayed as a preview before saving.",
-    "priority": "Medium",
-    "labels": ["Profile", "Enhancement", "UI"],
-    "status": "In Progress",
-    "assignee": "John Doe",
-    "reporter": "Jane Smith",
-    "created_date": "2025-03-28",
-    "updated_date": "2025-03-30",
-    "due_date": "2025-04-05",
-    "comments": [
+  "id": "JIRA-201",
+  "title": "Profile Page - Add Profile Picture Upload Feature",
+  "description": "Allow users to upload, change, and remove their profile pictures. The supported formats should be JPG, PNG, and GIF with a maximum size of 5MB. The uploaded image should be displayed as a preview before saving. Users should also be able to crop and resize images before uploading.",
+  "priority": "High",
+  "labels": ["Profile", "Enhancement", "UI", "Security", "Performance"],
+  "status": "In Progress",
+  "assignee": "John Doe",
+  "reporter": "Jane Smith",
+  "created_date": "2025-03-28",
+  "updated_date": "2025-03-31",
+  "due_date": "2025-04-07",
+  "comments": [
       {
-        "comment_id": "CMT-001",
-        "author": "Alex Brown",
-        "date": "2025-03-29",
-        "content": "Make sure to add frontend validation for file formats and size."
+          "comment_id": "CMT-001",
+          "author": "Alex Brown",
+          "date": "2025-03-29",
+          "content": "Make sure to add frontend validation for file formats and size."
       },
       {
-        "comment_id": "CMT-002",
-        "author": "Sarah Lee",
-        "date": "2025-03-30",
-        "content": "Backend should validate the MIME type to prevent security issues."
+          "comment_id": "CMT-002",
+          "author": "Sarah Lee",
+          "date": "2025-03-30",
+          "content": "Backend should validate the MIME type to prevent security issues."
+      },
+      {
+          "comment_id": "CMT-003",
+          "author": "Michael Tan",
+          "date": "2025-03-31",
+          "content": "Consider adding lazy loading for profile images to optimize performance."
       }
-    ],
-    "bug_details": {
+  ],
+  "bug_details": {
       "is_bug": true,
       "bug_id": "BUG-321",
-      "bug_description": "Uploaded images are not appearing immediately in the preview section.",
+      "bug_description": "Uploaded images are not appearing immediately in the preview section. Additionally, some users report that large images fail to upload but no error message is shown.",
       "bug_status": "Open",
       "bug_reported_by": "David White",
-      "bug_reported_date": "2025-03-30"
-    },
-    "resolution": {
+      "bug_reported_date": "2025-03-30",
+      "affected_modules": ["Frontend UI", "Image Upload API", "File Storage Service"],
+      "error_logs": [
+          {
+              "timestamp": "2025-03-30T14:12:45Z",
+              "service": "Frontend",
+              "message": "Failed to render uploaded image preview due to CORS error."
+          },
+          {
+              "timestamp": "2025-03-30T14:14:10Z",
+              "service": "Backend",
+              "message": "File size validation error: uploaded file exceeded 5MB limit."
+          }
+      ]
+  },
+  "resolution": {
       "status": "Unresolved",
       "resolved_by": null,
       "resolved_date": null,
       "resolution_notes": null
-    },
-    "expected_output": [
+  },
+  "expected_output": [
       "User can upload JPG, PNG, and GIF images up to 5MB.",
       "Uploaded image should be visible as a preview before saving.",
       "Users can remove or change their profile picture.",
-      "Proper error messages should be displayed for unsupported formats or oversized files."
-    ]
-  }
-  
+      "Proper error messages should be displayed for unsupported formats or oversized files.",
+      "Users should be able to crop and resize images before uploading.",
+      "Lazy loading should be implemented to optimize image performance."
+  ],
+  "related_tickets": [
+      {
+          "id": "JIRA-150",
+          "title": "Optimize Image Loading for User Profiles",
+          "status": "Completed",
+          "resolution_notes": "Implemented lazy loading for all profile images."
+      },
+      {
+          "id": "JIRA-175",
+          "title": "Improve File Upload Security",
+          "status": "In Progress",
+          "resolution_notes": "Added additional backend checks for MIME type validation."
+      }
+  ]
+}

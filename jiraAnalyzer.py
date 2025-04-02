@@ -1,23 +1,22 @@
 import os
 import json
 from crewai import LLM, Crew, Agent, Task
-from langchain_openai import ChatOpenAI
 
 
-os.environ["OPENAI_API_KEY"] = ""
-
-llm = ChatOpenAI(
-    model="ollama/llama3.2",
-    base_url="http://localhost:11434/v1"
-)
-
-
-# os.environ["GROQ_API_KEY"] = ""
+# os.environ["OPENAI_API_KEY"] = ""
 
 # llm = LLM(
-#     model="groq/llama3-8b-8192",
-#     temperature=0.7
+#     model="ollama/llama3.2",
+#     base_url="http://localhost:11434"
 # )
+
+
+os.environ["GROQ_API_KEY"] = "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"
+
+llm = LLM(
+    model="groq/llama3-8b-8192",
+    temperature=0.7
+)
 
 
 # Load Jira Ticket Data
@@ -43,69 +42,40 @@ jira_analyzer = Agent(
     llm= llm
 )
 
-def analyze_jira(ticket):
-    return f"Analyzed Jira Ticket: {ticket['title']} - {ticket['description']}"
 
 # Test Case Recommender Agent
 test_case_recommender = Agent(
     name="Test Case Recommender",
-    role="Suggests relevant test cases based on Jira ticket details",
-    goal="Match Jira details with relevant predefined test cases",
+    role="Suggests relevant test cases based on analysed Jira report",
+    goal="Match analysed jira details with relevant predefined test cases",
     backstory="An expert QA assistant capable of mapping issues to test cases.",
     verbose=True,
     llm= llm
 )
-
-def recommend_test_cases(ticket, test_cases):
-    relevant_cases = [tc["test_case"] for tc in test_cases if tc["category"] in ticket["title"]]
-    return f"Suggested Test Cases: {relevant_cases if relevant_cases else 'No matching test cases found.'}"
-
-# Report Generator Agent
-report_generator = Agent(
-    name="Report Generator",
-    role="Generates a structured report with suggested test cases",
-    goal="Compile a well-formatted test case recommendation report",
-    backstory="A meticulous report compiler that ensures clarity and completeness.",
-    verbose=True,
-    llm= llm
-)
-
-def generate_report(analysis, recommendations):
-    return f"\nReport:\n{analysis}\n{recommendations}\n"
 
 # Define Tasks
 analyze_jira_task = Task(
     name="Analyze Jira Ticket",
     agent=jira_analyzer,
     description=f"Extract key details from the provided Jira ticket and categorize the issue. Here is the Jira details - \n{jira_ticket}",
-    execute=lambda: analyze_jira(jira_ticket),
     expected_output="A summary of the Jira ticket including title, description, and key details.",
-    output_file='analyze_jira_test.txt'
+    output_file='local/analyze_jira_test.txt'
 )
+
+
 
 recommend_test_cases_task = Task(
     name="Recommend Test Cases",
     agent=test_case_recommender,
-    description=f"Map Jira ticket details to a relevant list of test cases and suggest applicable ones. Here are the list of test cases - \n{test_cases} \n and the jira ticket - \n{jira_ticket}",
-    execute=lambda: recommend_test_cases(jira_ticket, test_cases),
-    expected_output="A list of suggested test cases that match the Jira ticket category.",
-    output_file='recommend_test.txt'
+    description=f'Take the data from analyzed report placed at local/analyze_jira_test.txt and map the data to a list of predefined test cases and suggest applicable ones.Here are the list of test cases - \n{test_cases}',#f"Map Jira ticket details to a relevant list of test cases and suggest applicable ones. Here are the list of test cases - \n{test_cases} \n and the jira ticket - \n{jira_ticket}",
+    expected_output="A list of suggested test cases from the available test cases which match the details with analyzer report in a json format ",#with same title and id only mentioned in the test cases that matches the Jira ticket.",
+    output_file='local/recommend_test.json'
 )
-
-generate_report_task = Task(
-    name="Generate Test Case Report",
-    agent=report_generator,
-    description="Create a structured report with suggested test cases based on Jira ticket analysis.",
-    execute=lambda: generate_report(analyze_jira_task.execute(), recommend_test_cases_task.execute()),
-    expected_output="A structured report summarizing the Jira analysis and recommended test cases.",
-    output_file='generate_report_test.txt'
-)
-
 
 # Crew AI Team
 crew = Crew(
-    agents=[jira_analyzer, test_case_recommender, report_generator],
-    tasks=[analyze_jira_task, recommend_test_cases_task, generate_report_task]
+    agents=[jira_analyzer, test_case_recommender],
+    tasks=[analyze_jira_task, recommend_test_cases_task]
 )
 
 # Run Crew

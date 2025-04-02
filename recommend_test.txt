@@ -1,8 +1,0 @@
-Based on the Jira ticket details provided, the following test cases match the "Profile Page" category:
-
-1. {'category': 'Profile Page', 'test_case': 'Verify that users can upload a JPG, PNG, or GIF file successfully.'}
-2. {'category': 'Profile Page', 'test_case': 'Check that the preview is displayed before saving.'}
-3. {'category': 'Profile Page', 'test_case': 'Ensure that file size validation prevents uploads over 5MB.'}
-4. {'category': 'Profile Page', 'test_case': 'Confirm that an error message appears for unsupported file formats.'}
-
-These test cases align with the expected output mentioned in the Jira ticket, specifically focusing on the profile picture upload feature and its related functionality.

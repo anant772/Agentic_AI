@@ -3,7 +3,7 @@ from crewai import LLM, Crew, Agent, Task
 from langchain_openai import ChatOpenAI
 
 
-os.environ["GROQ_API_KEY"] = ""
+os.environ["GROQ_API_KEY"] = "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"
 
 llm = LLM(
     model="groq/llama3-8b-8192",
