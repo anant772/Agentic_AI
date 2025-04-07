@@ -1,0 +1,141 @@
+**Suggested Test Cases for Profile Page - Add Profile Picture Upload Feature**
+
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f0f0f0;
+  }
+</style>
+
+<table>
+  <tr>
+    <th>Test Case ID</th>
+    <th>Test Case Title</th>
+    <th>Description</th>
+    <th>Expected Result</th>
+  </tr>
+  <tr>
+    <td>TC-001</td>
+    <td>Verify successful profile picture upload</td>
+    <td>Upload a valid JPG, PNG, or GIF file within 5MB.</td>
+    <td>Image is uploaded successfully and displayed in the preview.</td>
+  </tr>
+  <tr>
+    <td>TC-002</td>
+    <td>Validate unsupported file formats</td>
+    <td>Try uploading an unsupported file format (e.g., PDF, BMP, SVG).</td>
+    <td>Error message should be displayed: 'Unsupported file format'.</td>
+  </tr>
+  <tr>
+    <td>TC-003</td>
+    <td>Check file size limit</td>
+    <td>Upload an image greater than 5MB.</td>
+    <td>Error message should be displayed: 'File size exceeds the 5MB limit'.</td>
+  </tr>
+  <tr>
+    <td>TC-004</td>
+    <td>Ensure preview is displayed after upload</td>
+    <td>Upload an image and check if it appears in the preview section before saving.</td>
+    <td>The uploaded image is shown in the preview.</td>
+  </tr>
+  <tr>
+    <td>TC-005</td>
+    <td>Validate MIME type on backend</td>
+    <td>Bypass frontend validation and upload a file with a modified extension but incorrect MIME type.</td>
+    <td>Backend should reject the file and return an error.</td>
+  </tr>
+  <tr>
+    <td>TC-006</td>
+    <td>Test removing profile picture</td>
+    <td>Remove an already uploaded profile picture.</td>
+    <td>Profile picture is removed, and a default placeholder image is shown.</td>
+  </tr>
+  <tr>
+    <td>TC-009</td>
+    <td>Ensure cropping and resizing feature works</td>
+    <td>Use cropping and resizing options before uploading.</td>
+    <td>Image is cropped and resized correctly before upload.</td>
+  </tr>
+  <tr>
+    <td>TC-011</td>
+    <td>Test concurrent uploads</td>
+    <td>Try uploading multiple images in quick succession.</td>
+    <td>Only the last uploaded image should be stored as the profile picture.</td>
+  </tr>
+  <tr>
+    <td>TC-012</td>
+    <td>Verify image compression before upload</td>
+    <td>Check if large images are compressed before uploading.</td>
+    <td>File size is reduced without significant loss of quality.</td>
+  </tr>
+  <tr>
+    <td>TC-013</td>
+    <td>Cross-browser compatibility</td>
+    <td>Test image upload functionality on different browsers (Chrome, Firefox, Safari, Edge).</td>
+    <td>Functionality should work the same across all browsers.</td>
+  </tr>
+  <tr>
+    <td>TC-014</td>
+    <td>Accessibility check</td>
+    <td>Ensure screen readers can interpret file upload fields and error messages.</td>
+    <td>The feature is accessible to users with disabilities.</td>
+  </tr>
+  <tr>
+    <td>TC-015</td>
+    <td>Test session timeout behavior</td>
+    <td>Upload an image and leave the session inactive for an extended period before saving.</td>
+    <td>Session timeout should not lose uploaded data if restored within a valid timeframe.</td>
+  </tr>
+  <tr>
+    <td>TC-020</td>
+    <td>Ensure image file integrity after upload</td>
+    <td>Upload an image and compare the stored file with the original for corruption or data loss.</td>
+    <td>Stored image should match the original file without quality degradation.</td>
+  </tr>
+  <tr>
+    <td>TC-021</td>
+    <td>Validate profile picture visibility for other users</td>
+    <td>Check if the uploaded profile picture is correctly displayed to other users.</td>
+    <td>Other users should see the correct updated profile picture.</td>
+  </tr>
+  <tr>
+    <td>TC-022</td>
+    <td>Test image upload retry mechanism</td>
+    <td>Simulate a failed upload (e.g., network disconnection) and check if retrying works properly.</td>
+    <td>Users should be able to retry the upload without starting over.</td>
+  </tr>
+  <tr>
+    <td>TC-024</td>
+    <td>Ensure file permissions are secure</td>
+    <td>Check if unauthorized users can access, modify, or delete uploaded profile pictures.</td>
+    <td>Only authorized users should be able to modify their own profile pictures.</td>
+  </tr>
+  <tr>
+    <td>TC-025</td>
+    <td>Validate mobile responsiveness</td>
+    <td>Test the profile picture upload feature on mobile devices (iOS, Android).</td>
+    <td>Feature should work smoothly with a responsive UI.</td>
+  </tr>
+  <tr>
+    <td>TC-026</td>
+    <td>Verify incorrect MIME type injection</td>
+    <td>Try renaming a non-image file (e.g., .exe or .txt) to .jpg and attempt to upload it.</td>
+    <td>System should correctly detect and reject the file.</td>
+  </tr>
+  <tr>
+    <td>TC-027</td>
+    <td>Check system behavior under high load</td>
+    <td>Simulate multiple users uploading images at the same time.</td>
+    <td>System should handle concurrent uploads without crashing or significant slowdown.</td>
+  </tr>
+</table>
